@@ -140,7 +140,8 @@ function generatePassword (){
         var num = Math.random(); 
         var randomIndex = Math.floor(num * possChar.length); 
         password = password + possChar[randomIndex]; 
-        console.log(password); 
+        console.log(password);
+        alert("password created");  
         return password; 
     }
 }
