@@ -17,7 +17,7 @@ generateBtn.addEventListener("click", writePassword);
 
 
 //my arrays 
-var possChar = []
+var possChar = []; 
 
 var specialChar = ["~", "`","!","@","#","$","%","^","&","*","(",")","_", "-","+","=","{","}","[", "]","|"]; 
 
@@ -63,7 +63,7 @@ function getSpecial () {
     // loop and push
         for (char in specialChar) {
             possChar.push(char);
-            console.log("logging specialChar");
+            console.log(hasSpecial);
         }
     } else {
         alert("password will not contain special characters");    
@@ -83,7 +83,7 @@ function getNumbers () {
         console.log("Numerical characters included in password generator"); 
         for (charNum in numbers) {
             possChar.push(charNum);
-            console.log("logging numberChar");
+            console.log(hasNumbers);
         } 
     } else {
         alert("Password will not include numerical characters");   
@@ -103,7 +103,7 @@ function getLow () {
         console.log("Lowcase characters included in password generator");      
         for (charLow in lowCase) {
             possChar.push(charLow);
-            console.log("logging lowChar");
+            console.log(hasLow);
         }
     } else {
         alert("Password will not include lowcase characters."); 
@@ -122,7 +122,7 @@ function getUpper () {
         console.log("Uppercase characters will be included in password generator"); 
         for (charUpper in upperCase) {
             possChar.push(charUpper);
-            console.log("logging upperChar");
+            console.log(hasUpper);
         }
     } else {
         alert("Password will not include uppercase characters."); 
@@ -133,11 +133,13 @@ getUpper();
 
 
 //generate random password  
+var password =""; 
 
 for (var i = 0; i < charNum ; i++) {
     var num = Math.random(); 
     var randomIndex = Math.floor(num * possChar.length); 
-    (possChar[num]); 
+    password = password + possChar[randomIndex]; 
+    console.log(password); 
 } 
 
 
