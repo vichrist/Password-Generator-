@@ -132,35 +132,29 @@ function getUpper () {
 getUpper(); 
 
 
-//generate random password  
+//create function & generate random password  
     
+function generatePassword (){
     var password =""; 
-
     for (var i = 0; i < charNum ; i++) {
         var num = Math.random(); 
         var randomIndex = Math.floor(num * possChar.length); 
         password = password + possChar[randomIndex]; 
         console.log(password); 
+        return password; 
     }
+}
 
 
-      
 
-//function generatePassword () {
-  //  var password  = "";
-    //for (var i = 0; i < charNum ; i++) {
-      //  var num = Math.random(); 
-        //var randomIndex = Math.floor(num * possChar.length); 
-        //password += possChar[randomIndex];  
+ // var password  = "";
+   // for (var i = 0; i < charNum ; i++) {
+     // var num = Math.random(); 
+       // var randomIndex = Math.floor(num * possChar.length); 
+        //password = password + possChar[randomIndex];  
+        //console.log(password); 
     //} 
+    
     //return password;    
-//}
 
-
-
-
-    // generate random number
-    // var num = Math.random(); 0 -> 0.99999
-    // var randomIndex = Math.floor(num * possChar.length);
-    // produce a random element from the possChar array (possChar[num]);
-// }
+  
