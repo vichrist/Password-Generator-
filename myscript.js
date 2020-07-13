@@ -133,14 +133,30 @@ getUpper();
 
 
 //generate random password  
-var password =""; 
+    
+    var password =""; 
 
-for (var i = 0; i < charNum ; i++) {
-    var num = Math.random(); 
-    var randomIndex = Math.floor(num * possChar.length); 
-    password = password + possChar[randomIndex]; 
-    console.log(password); 
-} 
+    for (var i = 0; i < charNum ; i++) {
+        var num = Math.random(); 
+        var randomIndex = Math.floor(num * possChar.length); 
+        password = password + possChar[randomIndex]; 
+        console.log(password); 
+    }
+
+
+      
+
+//function generatePassword () {
+  //  var password  = "";
+    //for (var i = 0; i < charNum ; i++) {
+      //  var num = Math.random(); 
+        //var randomIndex = Math.floor(num * possChar.length); 
+        //password += possChar[randomIndex];  
+    //} 
+    //return password;    
+//}
+
+
 
 
     // generate random number
