@@ -46,7 +46,7 @@ function getPassword () {
 
 getPassword(); 
 
-//function & confirm for special character, if/else statement, for-looping and pushing  
+//function for special character, if/else statement, for-looping and pushing  
 
 function getSpecial () {
     var hasSpecial = confirm ("Click OK to confirm including special characters?"); 
@@ -74,7 +74,7 @@ getSpecial();
 
 
 
-//function & confirm for numerical character, if/else statement 
+//function for numerical character, if/else statements, for-looping and pushing 
 
 function getNumbers () { 
     var hasNumbers = confirm ("Click OK to confirm including numerical characters?"); 
@@ -94,7 +94,7 @@ getNumbers();
 
 
 
-//confirm for lower case character, if/else statement 
+//function for lower case character, if/else statements,for-looping and pushing 
 
 function getLow () {
     var hasLow = confirm ("Click OK to confirm including lowcase characters?"); 
@@ -113,7 +113,7 @@ function getLow () {
 getLow (); 
 
 
-//confirm for uppercase character, if/else statements 
+//function for uppercase character, if/else statements, for-looping and pushing 
 
 function getUpper () {
     var hasUpper = confirm ("Click OK to confirm including uppercase characters?");
@@ -132,11 +132,11 @@ function getUpper () {
 getUpper(); 
 
 
-//create function & generate random password  
+//create function & generate random password
     
 function generatePassword (){
     var password =""; 
-    for (var i = 0; i < charNum ; i++) {
+    for (var i = 0; i < charNum; i++) {
         var num = Math.random(); 
         var randomIndex = Math.floor(num * possChar.length); 
         password = password + possChar[randomIndex]; 
@@ -146,15 +146,6 @@ function generatePassword (){
 }
 
 
-
- // var password  = "";
-   // for (var i = 0; i < charNum ; i++) {
-     // var num = Math.random(); 
-       // var randomIndex = Math.floor(num * possChar.length); 
-        //password = password + possChar[randomIndex];  
-        //console.log(password); 
-    //} 
-    
-    //return password;    
+ 
 
   
