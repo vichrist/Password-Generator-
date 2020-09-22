@@ -1,13 +1,32 @@
-# passwordgenerator
+# Title: Password Generator
 
-My task was to generate a random password based on user preference of including special characters, upper and lower case letters as well as numbers. 
+## Description
 
-The user is able to choose the length of the password which is strictly set between 8-128 characters long. 
+This application will generate a random password based on a character lenth and choice of characters to include. 
 
-I created multiple lists of arrays that take in different values for password characters.
+## Acceptance Criteria
 
-I then created an empty array that would take in the values from the list of arrays, once the user selects preference of including or not.  
+GIVEN I need a new, secure password
+WHEN I click the button to generate a password
+THEN I am presented with a series of prompts for password criteria
+WHEN prompted for password criteria
+THEN I select which criteria to include in the password
+WHEN prompted for the length of the password
+THEN I choose a length of at least 8 characters and no more than 128 characters
+WHEN prompted for character types to include in the password
+THEN I choose lowercase, uppercase, numeric, and/or special characters
+WHEN I answer each prompt
+THEN my input should be validated and at least one character type should be selected
+WHEN all prompts are answered
+THEN a password is generated that matches the selected criteria
+WHEN the password is generated
+THEN the password is either displayed in an alert or written to the page
 
-I created functions, if/else statements, and for-loops for all prompts and confirm line items 
+## Contributors:
+    Christal Vigil JavaScript 
+    DU Bootcamp -HTML & CSS 
 
-I created a function to generate the password associated with user selected preference criteria 
+## Links 
+
+Deployed Link: https://vichrist.github.io/Password-Generator-/
+GitHub Link: https://github.com/vichrist/Password-Generator-

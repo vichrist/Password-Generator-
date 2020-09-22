@@ -1,7 +1,7 @@
-// Assignment Code
+// variable assigned to the generate ID so that we can call/execute the event listener hwen clicked 
 var generateBtn = document.querySelector("#generate"); 
 
-// Write password to the #password input
+// function that will write the password 
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -10,13 +10,11 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
+// function that will generate the passwor 
 
-generateBtn.addEventListener("click", writePassword);
+function generatePassword() {
 
-
-
-//my arrays 
+// variable list of arrays 
 var possChar = []; 
 
 var specialChar = ["~", "`","!","@","#","$","%","^","&","*","(",")","_", "-","+","=","{","}","[", "]","|"]; 
@@ -27,126 +25,55 @@ var lowCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","
 
 var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]; 
 
-var charNum;
+var password = '';
 
-//function & prompt for character lenth, if/else statement 
-function getPassword () {
-    var charLength = prompt("Choose password character length of 8 or more characters but no greater than 128 characters?");
-    charNum = parseInt(charLength); 
-    console.log("number of characters", charNum); 
-    console.log("truth condition met?", charNum <8 || charNum >128);
+// do-while loop, prompts and confirms along with if/else statements 
 
-    if (charNum <8 || charNum >128){ 
-        alert("Password criteria not met, choose length between 8 & 128 characters"); 
-        getPassword();
-    } else {
-        alert("Password criteria met.");  
-    }    
-}
-
-getPassword(); 
-
-//function for special character, if/else statement, for-looping and pushing  
-
-function getSpecial () {
-    var hasSpecial = confirm ("Click OK to confirm including special characters?"); 
-
-    if (hasSpecial){
-        console.log("Special characters included in password generator");  
-    //add specialChar array to possChar array
-        // var possChar = []
-        // var specChar = [!,@,#,$]
-
-    // concatention -> adding strings (or others) together (look up .concat())
-        // possChar = possChar + specChart
-
-    // loop and push
-        for (char in specialChar) {
-            possChar.push(char);
-            console.log(hasSpecial);
-        }
-    } else {
-        alert("password will not contain special characters");    
-    }
-}
-
-getSpecial(); 
-
-
-
-//function for numerical character, if/else statements, for-looping and pushing 
-
-function getNumbers () { 
-    var hasNumbers = confirm ("Click OK to confirm including numerical characters?"); 
-
-    if (hasNumbers){
-        console.log("Numerical characters included in password generator"); 
-        for (charNum in numbers) {
-            possChar.push(charNum);
-            console.log(hasNumbers);
-        } 
-    } else {
-        alert("Password will not include numerical characters");   
+do {
+    charLength = prompt("Choose password character length of 8 or more characters but no greater than 128 characters?");
+    console.log("number of characters", charLength); 
+    console.log("truth condition met?", charLength <8 || charLength >128);
+    if (charLength === null) {
+        return '';
     } 
-}
+} while (charLength < 8 || charLength > 128);
 
-getNumbers(); 
-
-
-
-//function for lower case character, if/else statements,for-looping and pushing 
-
-function getLow () {
-    var hasLow = confirm ("Click OK to confirm including lowcase characters?"); 
-
-    if (hasLow){
-        console.log("Lowcase characters included in password generator");      
-        for (charLow in lowCase) {
-            possChar.push(charLow);
-            console.log(hasLow);
-        }
-    } else {
-        alert("Password will not include lowcase characters."); 
+if (confirm ("Click OK to include special characters?")) {
+    for (i=0; i<specialChar.length; i ++) {
+        possChar.push(specialChar[i]);
     }
 }
 
-getLow (); 
+if (confirm ("Click OK to confirm including numerical characters?")) {
+    for (i=0; i<numbers.length; i ++) {
+        possChar.push(numbers[i]); 
+    } 
+} 
+
+if (confirm ("Click OK to confirm including uppercase characters?")) {
+    for (i=0; i<upperCase.length; i ++) {
+        possChar.push(upperCase[i]); 
+    } 
+} 
+
+if (confirm ("Click OK to confirm including lowcase characters?"))  {
+    for (i = 0; i<lowCase.length; i ++) {
+        possChar.push(lowCase[i]); 
+    }
+}  
 
 
-//function for uppercase character, if/else statements, for-looping and pushing 
-
-function getUpper () {
-    var hasUpper = confirm ("Click OK to confirm including uppercase characters?");
-
-    if (hasUpper){
-        console.log("Uppercase characters will be included in password generator"); 
-        for (charUpper in upperCase) {
-            possChar.push(charUpper);
-            console.log(hasUpper);
-        }
-    } else {
-        alert("Password will not include uppercase characters."); 
-    }   
-}
-
-getUpper(); 
-
-
-//create function & generate random password
+//for loop to generate the random password
     
-function generatePassword (){
-    var password =""; 
-    for (var i = 0; i < charNum; i++) {
-        var num = Math.random(); 
-        var randomIndex = Math.floor(num * possChar.length); 
-        password = password + possChar[randomIndex]; 
-        console.log(password);
-        alert("password created");  
-        return password; 
-    }
+for (var i = 0; i < charLength; i++) {
+     
+    var random = Math.floor(Math.random() * possChar.length); 
+    
+    password += possChar[random];
+
+    } 
+    return password; 
 }
 
-
- 
-
-  
+// event listener to fire off the write password function 
+generateBtn.addEventListener("click", writePassword);
